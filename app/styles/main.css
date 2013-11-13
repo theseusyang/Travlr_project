@@ -1,0 +1,147 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.mainwrapper {
+    position:    absolute;
+    left:        50%;        /* Start with top left in the center */
+    /*top:         50%;*/
+    width:       1200px;      /* The fixed width... 200*/
+    height:      700px;      /* ...and height 100*/
+    margin-left: -600px;     /* Shift over half the width */
+    /*margin-top:  -350px;       Shift up half the height */
+    border: 1px solid black; /* Just for demo */
+
+    overflow:hidden;
+}
+
+.menubardiv {
+    position:relative;
+    width:1200px;
+    height: 70px;
+    top:0px;
+    left:50%;
+    margin-left: -600px;
+    z-index: 100;
+    background-color: rgb(50,50,50);  
+
+    text-align: center; 
+
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding:0;
+}
+
+li {
+    padding-bottom: 0;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+.menubarul{
+    position:relative;
+    top: 0;
+
+}
+.menubarul li {
+    position: relative;
+    vertical-align: middle;
+    display: inline;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.menubarspan {
+    font-size: 30px;
+    font-family: "Lucida Bright";
+    color: rgb(220,220,220);
+}
+
+.menubarspan a:link {
+    text-decoration:none;
+    color: rgb(245,245,245);
+}
+.menubarspan a:visited {
+    color: rgb(245,245,245);
+
+}
+.logospan a:visited {
+    font-size: 50px;
+    /*color:rgb(255,215,0);*/
+}
+.logospan {
+    font-size: 50px;
+}
+
+.bigphotodiv {
+
+}
+.centerimg {
+    width:100%;
+
+}
+.destnamediv {
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    top:20%;
+    left:50%;
+    margin-left:-250px;
+    z-index: 50;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    background-color: rgba(13,13,13, 0.5);
+
+    color: rgb(254,254,254);
+    font-size: 30px;
+    font-family: 'Lucida Bright';
+    overflow:hidden;
+}
+
+.chardiv {
+    position:absolute;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    /*visibility:hidden;*/
+    /*display:none;*/
+}
+.charli {
+    height: 30px;
+    width: 300px;
+
+    font-size: 25px;
+}
+
+.charul {
+    position:absolute;
+    width: 400px;
+    left:50%;
+    margin-left: -200px;
+    vertical-align: middle;
+}
+.nextdiv {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    top:40%;
+    left:80%;
+    background-color: rgba(14,14,14,0.4);
+
+    color: rgb(254,254,254);
+    display: table;
+    font-size: 30px;
+    line-height:2em;
+    font-family: 'Lucida Bright';
+}
+.nextspan {
+    font-size: 100px;
+}

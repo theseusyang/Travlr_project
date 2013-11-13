@@ -1,0 +1,37 @@
+<div class="mainwrapper">
+  <div class="menubardiv">
+    <ul class="menubarul"> 
+    <li><span class="menubarspan">Popular</span></li> 
+    <li><span class="menubarspan"><a href="/random">Random</a></span></li> 
+    <li><span class="menubarspan logospan"><a href="/">TRAVLR</a></span></li> 
+    <li><span class="menubarspan">Sign in</span></li> 
+    <li><span class="menubarspan"> Explore </span></li> 
+    </ul>
+  </div>
+  <div class="bigphotodiv" ng-init="loaddata()"> 
+    <img class="centerimg" ng-src="images/{{destdata.photourl}}">
+    <div class="destnamediv" ng-click="expand()" ng-style="destdivstyle"> 
+      <span> {{destdata.name}}</span>
+      <div class="chardiv" ng-style="chardivstyle"> 
+        <ul class="charul">
+          <li class="charli" >
+             {{currentmonth}}: high:{{destdata.weather[currentmonth][0]}} low:{{destdata.weather[currentmonth][1]}}
+          </li>
+          <li class="charli" >
+            flight price {{destdata.flight_price}}  
+          </li>
+          <li class="charli" ng-repeat="(key,val) in destdata.characteristics">
+            {{key}} : {{val}}
+          </li>
+        </ul>
+        <!-- <chartjs width="MyChart.width" height="MyChart.height" data="MyChart.data" options="MyChart.options" is-type="Doughnut"></chartjs> -->
+      </div>
+    </div>
+
+    <div class="nextdiv" ng-click="loaddata()"> 
+      <span class="nextspan">></span>
+    </div>
+
+  </div>
+</div>
+
