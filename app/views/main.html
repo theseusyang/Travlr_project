@@ -1,37 +1,58 @@
-<div class="mainwrapper">
+<div class="mainwrapper" ng-init="loaddata()">
   <div class="menubardiv">
     <ul class="menubarul"> 
-    <li><span class="menubarspan">Popular</span></li> 
-    <li><span class="menubarspan"><a href="/random">Random</a></span></li> 
-    <li><span class="menubarspan logospan"><a href="/">TRAVLR</a></span></li> 
-    <li><span class="menubarspan">Sign in</span></li> 
-    <li><span class="menubarspan"> Explore </span></li> 
+    <li><span ng-click="grabsearchbar();fetchcitieslist()"><a href="">Search</a></span></li> 
+    <li><span ng-click="exitexplore()"><a href="/">Random</a></span></li> 
+    <li><span ng-click="exitexplore()" class="logospan"><a href="/">Travlr</a></span></li> 
+    <li><span>Sign up</span></li> 
+    <li><span ng-click="enterexplore();fetchcitieslist()"><a href="">Explore</a></span></li> 
     </ul>
   </div>
-  <div class="bigphotodiv" ng-init="loaddata()"> 
+  <div class="bigphotodiv" ng-mouseover="mouseover()"> 
     <img class="centerimg" ng-src="images/{{destdata.photourl}}">
-    <div class="destnamediv" ng-click="expand()" ng-style="destdivstyle"> 
-      <span> {{destdata.name}}</span>
+    <div class="searchbardiv">
+      <form > <!-- ng-submit="searchforterm()" --> 
+        <input type="text" class="searchbarinput" placeholder="{{destdata.name}}" ng-model="searchterm" ng-change="searchinputchange()"/>
+        
+      </form>
+      <ul class="searchlistul">
+        <li ng-repeat="city in citieslist | filter:searchterm" ng-click="searchtermclicked(city)" >
+          {{city}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="destnamediv" ng-click="expand($event)"> 
+      <div data-fade="1" ngModel="activeTab" bs-tabs>
+        <div ng-repeat="tab in tabs" data-title="{{tab.title}}"><p>{{tab.content}}</p></div>
+      </div>
+      <span class="destnamespan"> {{destdata.name}}</span>
       <div class="chardiv" ng-style="chardivstyle"> 
         <ul class="charul">
           <li class="charli" >
-             {{currentmonth}}: high:{{destdata.weather[currentmonth][0]}} low:{{destdata.weather[currentmonth][1]}}
-          </li>
-          <li class="charli" >
-            flight price {{destdata.flight_price}}  
+             {{currentmonthname}}: high:{{destdata.weather[currentmonth][0]}} low:{{destdata.weather[currentmonth][1]}}
           </li>
           <li class="charli" ng-repeat="(key,val) in destdata.characteristics">
             {{key}} : {{val}}
           </li>
         </ul>
-        <!-- <chartjs width="MyChart.width" height="MyChart.height" data="MyChart.data" options="MyChart.options" is-type="Doughnut"></chartjs> -->
       </div>
     </div>
 
-    <div class="nextdiv" ng-click="loaddata()"> 
+    <div class="nextdiv" ng-click="clicknext()" ng-mouseenter="mouseenternext()" ng-mouseleave="mouseleavenext()"> 
+    </div>
+    <div class="containnextdiv">
       <span class="nextspan">></span>
     </div>
 
   </div>
+  <div class="footerbardiv"> 
+    <ul>
+      <li><span>About</span></li> 
+      <li><span><a href="/random">Tweet</a></span></li> 
+      <li><span><a href="/">TRAVLR</a></span></li> 
+      <li><span>Sign in</span></li> 
+      <li><span> Explore </span></li> 
+    </ul>
+  </div>
 </div>
-

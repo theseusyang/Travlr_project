@@ -1,16 +1,25 @@
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Avenir";
     color: #333;
+}
+a:link {
+    text-decoration:none;
+    color: rgb(245,245,245);
+}
+ a:visited {
+    color: rgb(245,245,245);
 }
 
 .mainwrapper {
     position:    absolute;
-    left:        50%;        /* Start with top left in the center */
+    left:        0%;        
     /*top:         50%;*/
-    width:       1200px;      /* The fixed width... 200*/
-    height:      700px;      /* ...and height 100*/
-    margin-left: -600px;     /* Shift over half the width */
+    /*width:       1200px;       The fixed width... 200*/
+    width:100%;
+    height:      760px;      /* ...and height 100*/
+    margin-left: auto;     /* Shift over half the width */
     /*margin-top:  -350px;       Shift up half the height */
     border: 1px solid black; /* Just for demo */
 
@@ -18,15 +27,17 @@ body {
 }
 
 .menubardiv {
-    position:relative;
-    width:1200px;
-    height: 70px;
+    /*position:relative;*/
+    width:100%;
+    height: 60px;
     top:0px;
-    left:50%;
-    margin-left: -600px;
-    z-index: 100;
-    background-color: rgb(50,50,50);  
-
+    left:0;
+    margin-left: 0;
+    z-index: 2100;
+    background-color: rgb(50,50,50); 
+    background-image:url('/images/icons/assault.png');
+    background-repeat: repeat;
+    /*box-shadow: 0px 2px 3px #ff0;*/
     text-align: center; 
 
 }
@@ -52,39 +63,80 @@ li {
 }
 .menubarul li {
     position: relative;
+    line-height: 60px;
     vertical-align: middle;
     display: inline;
     padding-left: 30px;
     padding-right: 30px;
 }
-.menubarspan {
-    font-size: 30px;
-    font-family: "Lucida Bright";
+.menubardiv span {
+    height:70px;
+    font-size: 25px;
+    font-family: "Avenir";
     color: rgb(220,220,220);
+    /*background-color: rgb(50,50,50); */
 }
 
-.menubarspan a:link {
-    text-decoration:none;
-    color: rgb(245,245,245);
-}
-.menubarspan a:visited {
-    color: rgb(245,245,245);
-
-}
-.logospan a:visited {
-    font-size: 50px;
+.logospan a {
+    font-size: 40px;
     /*color:rgb(255,215,0);*/
 }
 .logospan {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .bigphotodiv {
-
+    border-width: 1px #ff0;
+    height: 650px;
+    overflow: hidden;
 }
 .centerimg {
+    margin-top: -50px;
+    z-index:100;
     width:100%;
+}
 
+.searchbardiv {
+    position: absolute;
+    width: 0px;
+    height: 50px;
+    top:20%;
+    left:50%;
+    border-radius: 5px;
+    border-width: 0;
+    opacity: 0;
+    /*background-color: rgba(250,250,250, 1);*/
+    /*color:white;*/
+    margin-left:-250px;
+    z-index: 45;
+}
+.searchbarinput {
+    width: 490px;
+    height: 50px;
+    padding-left: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    font-size: 22px;
+    font-family: "Avenir";
+}
+
+.searchlistul {
+    width: 500px;
+    height:0;
+    border-radius: 5px;
+    overflow:hidden;
+    z-index: 2001;
+    
+}
+
+.searchlistul li {
+    width: 500px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    background-color: rgba(240,240,240,1);
+    z-index: 2002;
+    
 }
 .destnamediv {
     position: absolute;
@@ -93,16 +145,18 @@ li {
     top:20%;
     left:50%;
     margin-left:-250px;
-    z-index: 50;
+    z-index: 500;
 
     text-align: center;
     vertical-align: middle;
     line-height: 100px;
     background-color: rgba(13,13,13, 0.5);
+    border-radius: 5px;
+    border-width: 0;
 
     color: rgb(254,254,254);
     font-size: 30px;
-    font-family: 'Lucida Bright';
+    font-family: 'Avenir';
     overflow:hidden;
 }
 
@@ -114,34 +168,77 @@ li {
     /*visibility:hidden;*/
     /*display:none;*/
 }
+.charul {
+    position:absolute;
+    width: 500px;
+    left:50%;
+    margin-left: -250px;
+    vertical-align: middle;
+}
 .charli {
     height: 30px;
-    width: 300px;
-
+    width: 500px;
+    text-align: left;
     font-size: 25px;
 }
 
-.charul {
-    position:absolute;
-    width: 400px;
-    left:50%;
-    margin-left: -200px;
-    vertical-align: middle;
-}
 .nextdiv {
     position: absolute;
-    width: 70px;
+    width: 200px;
+    height: 600px;
+    top:10%;
+    left:80%;
+    background-color: rgba(14,14,14,0);
+    z-index: 1001;
+}
+
+.containnextdiv {
+    position: absolute;
+    width: 100px;
     height: 50px;
     top:40%;
     left:80%;
-    background-color: rgba(14,14,14,0.4);
+    opacity:0.2;
+    background-color: rgba(14,14,14,0.8);
 
     color: rgb(254,254,254);
     display: table;
     font-size: 30px;
-    line-height:2em;
-    font-family: 'Lucida Bright';
+    line-height: 4em;
+    font-family: 'Avenir';
+    text-align: center;
 }
 .nextspan {
-    font-size: 100px;
+    font-size: 50px;
+    color: rgb(200,200,200);
+}
+
+.footerbardiv {
+    position:absolute;
+    width:100%;
+    top:710px;
+    height: 50px;
+    background-color: rgb(50,50,50); 
+    background-image:url('/images/icons/assault.png');
+    background-repeat: repeat;
+}
+.footerbardiv ul {
+    position:absolute;
+    left: 650px;
+    width:800px;
+    margin-left: -400px;
+    top: 0;
+}
+.footerbardiv li {
+    /*position: relative;*/
+    vertical-align: middle;
+    display: inline;
+    line-height:50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.footerbardiv span {
+    font-size: 20px;
+    font-family: 'Avenir'; 
+    color:white;
 }

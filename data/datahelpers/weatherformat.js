@@ -1,7 +1,7 @@
 var formatdata = function() {
 	var months = "jan     feb     mar     apr     may     jun     jul     aug     sep     oct     nov     dec";
-  var highs = "23 22.5  24.4  28.6  36.7  44.2  50.7  50.4  46  38.7  29.1  25.3";
-  var lows = "13.1  12.9  14.9  19.8  27.9  33.8  38.8  38.8  35.4  29.7  19.8  15.4";
+  var highs = "38 40  50  61  72  80  85  84  76  65  54  43";
+  var lows = "26  27  35  44  54  63  69  67  60  50  41  31";
 
   var monthsa = months.replace(/\s+/g, " ").split(" ");
   var highsa = highs.replace(/\s+/g, " ").split(" ");
