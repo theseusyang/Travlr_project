@@ -10,6 +10,6 @@ app.configure(function() {
 });
 
 require('./config/environments')(app);
-require('./routes')(app);
+require('./routes/index.js')(app);
 
 module.exports = app;

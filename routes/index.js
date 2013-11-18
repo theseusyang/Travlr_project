@@ -1,6 +1,6 @@
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/test');
+var db = monk(process.env.MONGOHQ_URL);
 
 
 var ols = require('./OLS1.js');

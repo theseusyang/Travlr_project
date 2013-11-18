@@ -12,6 +12,10 @@ a:link {
     color: rgb(245,245,245);
 }
 
+li { 
+  cursor: pointer; 
+  cursor: hand; 
+}
 .mainwrapper {
     position:    absolute;
     left:        0%;        
