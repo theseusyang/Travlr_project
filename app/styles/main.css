@@ -182,6 +182,52 @@ li {
     font-size: 25px;
 }
 
+.gotitdiv {
+  position: absolute;
+  top:120px;
+  right:240px;
+  height: 40px;
+  width:100px;
+  border-radius: 5px;
+  background-color: rgba(255,140,0,0.8);
+
+  opacity: 0;
+
+  color: rgb(254,254,254);
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.votediv {
+  position:absolute;
+  top:160px;
+  right:260px;
+  z-index: 6000;
+}
+.voteupdiv,.votedowndiv{
+  display:block;
+  width:80px;
+  height:30px;
+  opacity: 0.2;
+
+  border-radius: 5px;
+  background-color: rgba(255,140,0,0.8);
+  /*background-image: '/images/icons/upvote.gif';*/
+
+  color: rgb(254,254,254);
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  /*background-repeat: none;*/
+}
+
+.votedowndiv {
+  position:absolute;
+  top:55px;
+}
+
 .nextdiv {
     position: absolute;
     width: 200px;

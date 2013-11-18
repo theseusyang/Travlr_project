@@ -85,6 +85,7 @@ angular.module('projectApp')
 
       $http.get('/getdestdata').success(function(data, status, headers, config) {
         $scope.destdata = data;
+        // $scope.destdata.description = decodeURIComponent( escape( data.description));
       }).error(function() {
         console.log('failed to get dest data');
       });
@@ -105,7 +106,12 @@ angular.module('projectApp')
     };
 
     $scope.clicknext = function() {
-      if (!inexploremode || ($scope.searchterm === '')) {
+      // if inexploremode but click next before entering anything, then return to random
+      // searchterm is empty and there is nothing left in the deck (no click has happened)
+      if (!inexploremode || (($scope.searchterm === '') && (exploredeck.length < 1))) {
+        if (inexploremode) {
+          $scope.exitexplore();
+        }
         $scope.loaddata();
       } 
       else {
@@ -187,6 +193,7 @@ angular.module('projectApp')
     };
     $scope.enterexplore = function() {
       if (!inexploremode) {
+        $('.explorespan a').css({'color':'rgb(255,140,0)'});
         // $scope.grabsearchbar();
         if (searchbarout) {
           searchbardisplay(false);
@@ -202,7 +209,47 @@ angular.module('projectApp')
     };
     $scope.exitexplore = function() {
       inexploremode = false;
+      $('.explorespan a').css({'color':'rgb(245,245,245)'});
+      exploredeck = [];
       searchbardisplay(false);
     };
+    $scope.gotitmsg = function(event) {
+      var $tar = $(event.target);
+      if ($tar.prop('tagName') !== 'DIV') {
+        $tar = $tar.parent();
+      }
+      var oldtext = $tar.text();
+      $tar.text('got it!');
+      setTimeout(function() {
+        $tar.text(oldtext);
+        $()
+      },1000);
+
+      // $('.gotitdiv').animate({
+      //   top:'100px',
+      //   opacity:1,
+      // },200);
+
+      // setTimeout(function() {
+      //   $('.gotitdiv').animate({
+      //   top:'120px',
+      //   opacity:0,
+      // },200);
+      // },600);
+    }
+    $scope.entervotediv = function(event) {
+      var $tar = $(event.target);
+      if ($tar.prop('tagName') !== 'DIV') {
+        $tar = $tar.parent();
+      }
+      $tar.animate({opacity:1},100);
+    }
+    $scope.exitvotediv = function(event) {
+      var $tar = $(event.target);
+      if ($tar.prop('tagName') !== 'DIV') {
+        $tar = $tar.parent();
+      }
+      $tar.animate({opacity:0.2},100);
+    }
 
   });

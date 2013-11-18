@@ -5,7 +5,7 @@
     <li><span ng-click="exitexplore()"><a href="/">Random</a></span></li> 
     <li><span ng-click="exitexplore()" class="logospan"><a href="/">Travlr</a></span></li> 
     <li><span>Sign up</span></li> 
-    <li><span ng-click="enterexplore();fetchcitieslist()"><a href="">Explore</a></span></li> 
+    <li><span class="explorespan" ng-click="enterexplore();fetchcitieslist()"><a href="">Explore</a></span></li> 
     </ul>
   </div>
   <div class="bigphotodiv" ng-mouseover="mouseover()"> 
@@ -30,7 +30,7 @@
       <div class="chardiv" ng-style="chardivstyle"> 
         <ul class="charul">
           <li class="charli" >
-             {{currentmonthname}}: high:{{destdata.weather[currentmonth][0]}} low:{{destdata.weather[currentmonth][1]}}
+             {{destdata.description}}
           </li>
           <li class="charli" ng-repeat="(key,val) in destdata.characteristics">
             {{key}} : {{val}}
@@ -39,6 +39,18 @@
       </div>
     </div>
 
+    <div class="gotitdiv">
+    got it!
+    </div>
+
+    <div class="votediv" >
+      <div class="voteupdiv" ng-click="gotitmsg($event)" ng-mouseenter="entervotediv($event)" ng-mouseleave="exitvotediv($event)">
+        <a href='' title="This is similar to my target destination!">up vote</a>
+      </div>
+      <div class="votedowndiv" ng-click="gotitmsg($event)" ng-mouseenter="entervotediv($event)" ng-mouseleave="exitvotediv($event)">
+        <a href='' title="This is really off from what the target destination is">down vote</a>
+      </div>
+    </div>
     <div class="nextdiv" ng-click="clicknext()" ng-mouseenter="mouseenternext()" ng-mouseleave="mouseleavenext()"> 
     </div>
     <div class="containnextdiv">
