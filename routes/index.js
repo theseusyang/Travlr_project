@@ -1,5 +1,10 @@
 var mongo = require('mongodb');
 var monk = require('monk');
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
+
+
+
 var address = process.env.MONGOHQ_URL || 'localhost:27017/test';
 var db = monk(address);
 
