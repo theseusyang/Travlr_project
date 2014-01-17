@@ -42,7 +42,8 @@ angular.module('projectApp')
           left:'50%',
           'opacity':'1',
         }, 300);
-          searchbarout = true;        
+        $('.searchbarinput').focus();
+        searchbarout = true;        
       }
     };
 
