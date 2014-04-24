@@ -50,3 +50,4 @@ var findnearest = function(docs, targetdoc, limit) { //docs is a mongodb cursor
 
 
 module.exports.findnearest = findnearest;
+

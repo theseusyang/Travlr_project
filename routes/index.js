@@ -1,7 +1,6 @@
 var mongo = require('mongodb');
 var monk = require('monk');
-// var passport = require('passport');
-// var FacebookStrategy = require('passport-facebook').Strategy;
+
 
 
 
